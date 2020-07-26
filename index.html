@@ -1,9 +1,99 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Formidable Works</title>
-  </head>
-  <body>
-    <h1>Formidable Works Limited</h1>
-  </body>
-</html> 
+
+<head>
+  <title>Formidable Works</title>
+  <link href='https://fonts.googleapis.com/css?family=Bungee' rel='stylesheet' type='text/css'>
+  <style>
+    body {
+      background-color: #111;
+      font-family: 'Bungee', sans-serif;
+      text-transform: uppercase;
+      background-image: linear-gradient(0deg, #000000 25%, #0f0f0f 25%, #0f0f0f 50%, #000000 50%, #000000 75%, #0f0f0f 75%, #0f0f0f 100%);
+      background-size: 40.00px 40.00px;
+    }
+
+    .title {
+      color: red;
+      font-size: 11vw;
+      position: relative;
+      opacity: 0.8;
+      filter: blur(1px);
+      animation: super8flicker linear 0.04s infinite, skew linear 5s infinite;
+
+    }
+
+    .title::before {
+      content: attr(data-text);
+      position: absolute;
+      mix-blend-mode: screen;
+      top: calc(-0.6*6px);
+      left: calc(0.6*6px);
+      color: limegreen;
+      animation: jump linear 4s infinite;
+
+    }
+
+    .title::after {
+      content: attr(data-text);
+      position: absolute;
+      mix-blend-mode: screen;
+      top: 0px;
+      left: 6px;
+      color: blue;
+    }
+
+    @keyframes super8flicker {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: .9;
+      }
+    }
+
+    @keyframes skew {
+      0% {
+        transform: none;
+      }
+
+      30% {
+        transform: none;
+      }
+
+      30.2% {
+        transform: skewX(50deg);
+      }
+
+      30.4% {
+        transform: skewX(-50deg);
+      }
+
+      31% {
+        transform: none;
+      }
+    }
+
+    @keyframes jump {
+      59% {
+        transform: translateX(0px);
+      }
+
+      59.1% {
+        transform: translateX(10px);
+      }
+
+      60% {
+        transform: translateX(0px);
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="title" data-text="Formidable Works.">Formidable Works.</h1>
+</body>
+
+</html>
